@@ -1,0 +1,38 @@
+{
+  "engines": {
+    "node": ">=14.20.1"
+  },
+  "name": "cse341-taskmaster",
+  "version": "1.0.0",
+  "description": "Final project for CSE341",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "swagger-autogen": "node ./swagger.js"
+  },
+  "author": "Marisa Miller, Alexander Karasik, and Lawrence Navarro",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.40.0",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.1",
+    "googleapis": "^105.0.0",
+    "mongodb": "^5.6.0",
+    "mongoose": "^7.3.0",
+    "nodemon": "^2.0.22",
+    "passport": "^0.6.0",
+    "passport-google-oauth20": "^2.0.0",
+    "session": "^0.1.0",
+    "swagger-autogen": "^2.23.2",
+    "swagger-ui-express": "^4.6.3",
+    "validatejs": "^0.0.2",
+    "validatorjs": "^3.22.1"
+  },
+  "keywords": []
+}
