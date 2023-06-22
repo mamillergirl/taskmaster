@@ -1,0 +1,27 @@
+{
+  "username": "john",
+  "password": "jd12",
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "johndoe@example.com",
+  "phoneNumber": "1234567890",
+  "birthday": "1990-05-15",
+  "address": "123 Main St, City, State",
+  "interest": "Reading, hiking",
+  "teamId": "1",
+  "task": {
+    "taskTitle": "Software Engineer",
+    "responsibilities": "Develop and maintain software applications",
+    "education": "Bachelor's degree in Computer Science",
+    "expertise": "Java, Python, SQL",
+    "skills": "Problem-solving, teamwork",
+    "salary": 80000
+  },
+  "emergencyContact": {
+    "emergencyWholeName": "Jane",
+    "emergencyPhoneNumber": "9876543210",
+    "emergencyEmail": "janedoe@example.com",
+    "emergencyAddress": "456 Park Ave, City, State"
+  },
+  "creationDate": "23-06-2023"
+}
