@@ -5,7 +5,7 @@ const ObjectId = require('mongodb').ObjectId;
 const getAll = (req, res) => {
     mongodb
         .getDb()
-        .db()
+        .db("taskmaster")
         .collection('inventory')
         .find()
         .toArray((err, lists) => {
@@ -24,7 +24,7 @@ const getSingle = (req, res) => {
     const inventoryId = new ObjectId(req.params.id);
     mongodb
         .getDb()
-        .db()
+        .db("taskmaster")
         .collection('inventory')
         .find({ _id: inventoryId })
         .toArray((err, result) => {
@@ -57,7 +57,7 @@ const createInventory = async (req, res) => {
         dateCreation: req.body.dateCreation
     };
 
-    const response = await mongodb.getDb().db().collection('inventory').insertOne(inventory);
+    const response = await mongodb.getDb().db("taskmaster").collection('inventory').insertOne(inventory);
     if (response.acknowledged) {
         res.status(201).json(response);
     } else {
@@ -94,7 +94,7 @@ const updateInventory = async (req, res) => {
     };
     const response = await mongodb
         .getDb()
-        .db()
+        .db("taskmaster")
         .collection('inventory')
         .replaceOne({ _id: inventoryId }, inventory);
     console.log(response);
@@ -109,7 +109,7 @@ const deleteInventory = async (req, res) => {
     const inventoryId = new ObjectId(req.params.id);
     const response = await mongodb
     .getDb()
-    .db()
+    .db("taskmaster")
     .collection('inventory')
     .remove({ _id: inventoryId }, true);
     console.log(response);

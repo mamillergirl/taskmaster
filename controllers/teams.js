@@ -5,7 +5,7 @@ const ObjectId = require('mongodb').ObjectId;
 const getAll = (req, res) => {
     mongodb
         .getDb()
-        .db()
+        .db("taskmaster")
         .collection('team')
         .find()
         .toArray((err, lists) => {
@@ -24,7 +24,7 @@ const getSingle = (req, res) => {
     const teamId = new ObjectId(req.params.id);
     mongodb
         .getDb()
-        .db()
+        .db("taskmaster")
         .collection('team')
         .find({ _id: teamId })
         .toArray((err, result) => {
@@ -51,7 +51,7 @@ const createTeam = async (req, res) => {
         dateCreated: req.body.dateCreated
     };
 
-    const response = await mongodb.getDb().db().collection('team').insertOne(team);
+    const response = await mongodb.getDb().db("taskmaster").collection('team').insertOne(team);
     if (response.acknowledged) {
         res.status(201).json(response);
     } else {
@@ -76,7 +76,7 @@ const updateTeam = async (req, res) => {
     };
     const response = await mongodb
         .getDb()
-        .db()
+        .db("taskmaster")
         .collection('team')
         .replaceOne({ _id: teamId }, team);
     console.log(response);
@@ -91,7 +91,7 @@ const deleteTeam = async (req, res) => {
     const teamId = new ObjectId(req.params.id);
     const response = await mongodb
     .getDb()
-    .db()
+    .db("taskmaster")
     .collection('team')
     .remove({ _id: teamId }, true);
     console.log(response);
