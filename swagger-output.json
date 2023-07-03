@@ -5,7 +5,7 @@
     "description": "Stores tasks, users, teams and inventory info and allows users to CRUD.",
     "version": "1.0.0"
   },
-  "host": "taskmaster-oq75.onrender.com/",
+  "host": "taskmaster-oq75.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -16,6 +16,698 @@
         "description": "",
         "parameters": [],
         "responses": {}
+      }
+    },
+    "/users/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "phoneNumber": {
+                  "example": "any"
+                },
+                "birthday": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                },
+                "interest": {
+                  "example": "any"
+                },
+                "jobTitle": {
+                  "example": "any"
+                },
+                "responsibilities": {
+                  "example": "any"
+                },
+                "education": {
+                  "example": "any"
+                },
+                "expertise": {
+                  "example": "any"
+                },
+                "skills": {
+                  "example": "any"
+                },
+                "salary": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "phoneNumber": {
+                  "example": "any"
+                },
+                "birthday": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                },
+                "interest": {
+                  "example": "any"
+                },
+                "jobTitle": {
+                  "example": "any"
+                },
+                "responsibilities": {
+                  "example": "any"
+                },
+                "education": {
+                  "example": "any"
+                },
+                "expertise": {
+                  "example": "any"
+                },
+                "skills": {
+                  "example": "any"
+                },
+                "salary": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/inventory/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "productCategory": {
+                  "example": "any"
+                },
+                "productName": {
+                  "example": "any"
+                },
+                "productDescription": {
+                  "example": "any"
+                },
+                "brand": {
+                  "example": "any"
+                },
+                "countryOrigin": {
+                  "example": "any"
+                },
+                "productWidth": {
+                  "example": "any"
+                },
+                "productHeight": {
+                  "example": "any"
+                },
+                "productVolume": {
+                  "example": "any"
+                },
+                "productWeight": {
+                  "example": "any"
+                },
+                "packType": {
+                  "example": "any"
+                },
+                "expiryDate": {
+                  "example": "any"
+                },
+                "dateCreation": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/inventory/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "productCategory": {
+                  "example": "any"
+                },
+                "productName": {
+                  "example": "any"
+                },
+                "productDescription": {
+                  "example": "any"
+                },
+                "brand": {
+                  "example": "any"
+                },
+                "countryOrigin": {
+                  "example": "any"
+                },
+                "productWidth": {
+                  "example": "any"
+                },
+                "productHeight": {
+                  "example": "any"
+                },
+                "productVolume": {
+                  "example": "any"
+                },
+                "productWeight": {
+                  "example": "any"
+                },
+                "packType": {
+                  "example": "any"
+                },
+                "expiryDate": {
+                  "example": "any"
+                },
+                "dateCreation": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/teams/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "teamName": {
+                  "example": "any"
+                },
+                "oid": {
+                  "example": "any"
+                },
+                "iod": {
+                  "example": "any"
+                },
+                "teamProfile": {
+                  "example": "any"
+                },
+                "taskId": {
+                  "example": "any"
+                },
+                "dateCreated": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/teams/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "teamName": {
+                  "example": "any"
+                },
+                "oid": {
+                  "example": "any"
+                },
+                "iod": {
+                  "example": "any"
+                },
+                "teamProfile": {
+                  "example": "any"
+                },
+                "taskId": {
+                  "example": "any"
+                },
+                "dateCreated": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/tasks/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "taskName": {
+                  "example": "any"
+                },
+                "taskInitiator": {
+                  "example": "any"
+                },
+                "taskStartDate": {
+                  "example": "any"
+                },
+                "responsiblePerson": {
+                  "example": "any"
+                },
+                "taskDeadline": {
+                  "example": "any"
+                },
+                "taskOutcome": {
+                  "example": "any"
+                },
+                "assignedtask": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/tasks/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "taskName": {
+                  "example": "any"
+                },
+                "taskInitiator": {
+                  "example": "any"
+                },
+                "taskStartDate": {
+                  "example": "any"
+                },
+                "responsiblePerson": {
+                  "example": "any"
+                },
+                "taskDeadline": {
+                  "example": "any"
+                },
+                "taskOutcome": {
+                  "example": "any"
+                },
+                "assignedtask": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     }
   }

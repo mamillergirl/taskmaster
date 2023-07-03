@@ -5,7 +5,7 @@ const doc = {
     title: 'Task Master API',
     description: 'Stores tasks, users, teams and inventory info and allows users to CRUD.',
   },
-  host: 'taskmaster-oq75.onrender.com/',
+  host: 'taskmaster-oq75.onrender.com',
   schemes: ['https'],
 };
 
