@@ -3,7 +3,8 @@ module.exports = {
       if (req.isAuthenticated()) {
         return next()
       } else {
-        res.redirect('/auth/login')
+        res.send(
+          `<p>Sign in with Google First</p><button><a href="/google">Sign In</a></button>`)
       }
     },
     

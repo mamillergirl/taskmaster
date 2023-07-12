@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
-
+const auth = require("../middleware/auth")
 const teamsController = require('../controllers/teams');
 
-router.get('/', teamsController.getAll);
+router.get('/',  auth.ensureAuth, teamsController.getAll);
 
-router.get('/:id', teamsController.getSingle);
+router.get('/:id',  auth.ensureAuth, teamsController.getSingle);
 
-router.post('/', teamsController.createTeam);
+router.post('/',  auth.ensureAuth, teamsController.createTeam);
 
-router.put('/:id', teamsController.updateTeam);
+router.put('/:id',  auth.ensureAuth, teamsController.updateTeam);
 
-router.delete('/:id', teamsController.deleteTeam); 
+router.delete('/:id',  auth.ensureAuth, teamsController.deleteTeam); 
 
 module.exports = router;
