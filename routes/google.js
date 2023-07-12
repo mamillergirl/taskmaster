@@ -13,7 +13,7 @@ passport.use(
       // options for google strategy
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "/google/callback"
+      callbackURL: "https://taskmaster-oq75.onrender.com/google/callback"
   }, (accessToken, refreshToken, profile, done) => {
       
 
@@ -85,7 +85,7 @@ router.get('/callback',
     res.redirect('/api-docs')
 });
 router.get('/login', (req,res) => {res.send(
-  `<p>Sign in with Google First</p><button><a href="http://localhost:8080/google">Sign In</a></button>`
+  `<p>Sign in with Google First</p><button><a href="/google">Sign In</a></button>`
 )})
 
 router.get('/logout', (req, res, next) => {
