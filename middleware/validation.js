@@ -10,7 +10,7 @@ const newInventory = async (req, res, next) => {
         "productHeight": "integer",
         "productVolume": "integer",
         "productWeight": "integer",
-        "packType": "integer",
+        "packType": "string",
         "expiryDate": "date",
     };
 
